@@ -17,7 +17,7 @@ import com.muyh.model.RES;
 import com.muyh.service.JvmInfoService;
 
 @Controller
-@RequestMapping(value = "/Jvm")
+@RequestMapping(value = "/")
 public class JvmCtrl {
 	
 	@Autowired

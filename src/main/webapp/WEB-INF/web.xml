@@ -5,10 +5,10 @@
         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
         version="3.0">
   <display-name>Archetype Created Web Application</display-name>
-  <!-- Spring和mybatis的配置文件 -->
+  <!--  -->
   <context-param>
     <param-name>contextConfigLocation</param-name>
-    <param-value>classpath:spring-mybatis.xml</param-value>
+    <param-value>classpath:SpringApplicationContext.xml</param-value>
   </context-param>
 
   <!-- 加载log4j配置文件 -->
