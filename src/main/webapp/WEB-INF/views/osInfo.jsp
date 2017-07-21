@@ -124,7 +124,7 @@ function formatParams(data) {
 	
 	function getOSInfo(){
 		ajax({
-            url: "http://"+hostip+"/Jvm/getOSInfo",
+            url: "http://"+hostip+"/getOSInfo",
             type: "GET",
             needToken: false,
             dataType: "json",

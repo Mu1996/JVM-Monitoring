@@ -41,8 +41,8 @@ public class JvmInfoService {
 	// 获取服务器基本信息
 	public OSInfo getOSInfo(String url) {
 		try {
-			JMXServiceURL serviceURL = new JMXServiceURL("service:jmx:rmi:///jndi/rmi://118.89.203.197:12312/jmxrmi");
-//			JMXServiceURL serviceURL = new JMXServiceURL("service:jmx:rmi:///jndi/rmi://118.89.203.197:60001/jmxrmi");
+//			JMXServiceURL serviceURL = new JMXServiceURL("service:jmx:rmi:///jndi/rmi://118.89.203.197:12312/jmxrmi");
+			JMXServiceURL serviceURL = new JMXServiceURL("service:jmx:rmi:///jndi/rmi://118.89.203.197:60001/jmxrmi");
 			JMXConnector conn = JMXConnectorFactory.connect(serviceURL);
 			MBeanServerConnection mbs=conn.getMBeanServerConnection();  
 			

@@ -109,7 +109,7 @@ function formatParams(data) {
 	
 	function getThreadInfo(){
 		ajax({
-            url: "http://"+hostip+"/Jvm/getThreadInfo",
+            url: "http://"+hostip+"/getThreadInfo",
             type: "GET",
             needToken: false,
             dataType: "json",

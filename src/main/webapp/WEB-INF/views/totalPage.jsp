@@ -90,7 +90,7 @@
 
     function getAllInfo() {
         ajax({
-            url: "http://" + hostip + "/Jvm/getAllInfo",
+            url: "http://" + hostip + "/getAllInfo",
             type: "GET",
             needToken: false,
             dataType: "json",

@@ -157,7 +157,7 @@ function formatParams(data) {
 	
 	function getMemoryInfo(){
 		ajax({
-            url: "http://"+hostip+"/Jvm/getMemoryInfo",
+            url: "http://"+hostip+"/getMemoryInfo",
             type: "GET",
             needToken: false,
             dataType: "json",
