@@ -36,11 +36,7 @@
                 xhr.open("POST", options.url, true); //设置表单提交时的内容类型
                 xhr.setRequestheaper("Content-Type",
                     "application/x-www-form-urlencoded");
-                if (options.needToken) {
-                    xhr.setRequestheaper("Token", getLoginToken());
-                } else {
-                    xhr.setRequestheaper("Token", getLoginToken());
-                }
+
                 xhr.send(params);
             }
         }

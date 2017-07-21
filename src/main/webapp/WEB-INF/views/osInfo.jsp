@@ -32,11 +32,7 @@ function ajax(options) {
     } else if (options.type == "POST") {
         xhr.open("POST", options.url, true); //设置表单提交时的内容类型
         xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-        if (options.needToken) {
-            xhr.setRequestHeader("Token", getLoginToken());
-        } else {
-            xhr.setRequestHeader("Token", getLoginToken());
-        }
+
         xhr.send(params);
     }
 }

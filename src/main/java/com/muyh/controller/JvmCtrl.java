@@ -3,6 +3,7 @@ package com.muyh.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.muyh.model.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -10,10 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.muyh.model.JVMThreadInfo;
-import com.muyh.model.MemoryInfo;
-import com.muyh.model.OSInfo;
-import com.muyh.model.RES;
 import com.muyh.service.JvmInfoService;
 
 @Controller
@@ -46,6 +43,12 @@ public class JvmCtrl {
 		
         return "memoryInfo";
     }
+
+	@RequestMapping(value = "/getClassLoadPage", method = RequestMethod.GET)
+	public String getClassLoadPage(ModelMap model) {
+
+		return "classLoadInfo";
+	}
 	
 	@ResponseBody
 	@RequestMapping(value = "/getAllInfo", method = RequestMethod.GET)
@@ -98,4 +101,17 @@ public class JvmCtrl {
 		
         return res;
     }
+
+	@ResponseBody
+	@RequestMapping(value = "/getClassLoadInfo", method = RequestMethod.GET)
+	public RES getClassLoadInfo(ModelMap model) {
+
+		ClassLoadInfo classLoad = jvmInfoService.getClassLoadInfo("service:jmx:rmi:///jndi/rmi://118.89.203.197:60001/jmxrmi");
+		RES res = new RES();
+		res.code = 0;
+		res.returnValue = classLoad;
+		res.errorReason = "";
+
+		return res;
+	}
 }
