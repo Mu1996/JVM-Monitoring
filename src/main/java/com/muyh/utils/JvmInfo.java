@@ -6,8 +6,7 @@ import java.lang.management.CompilationMXBean;
 import java.lang.management.GarbageCollectorMXBean;  
 import java.lang.management.ManagementFactory;  
 import java.lang.management.MemoryMXBean;  
-import java.lang.management.MemoryManagerMXBean;  
-import java.lang.management.MemoryPoolMXBean;  
+import java.lang.management.MemoryPoolMXBean;
 import java.lang.management.MemoryUsage;  
 import java.lang.management.OperatingSystemMXBean;  
 import java.lang.management.RuntimeMXBean;  
@@ -19,16 +18,10 @@ import java.util.Arrays;
 import java.util.List;
 
 import javax.management.AttributeNotFoundException;
-import javax.management.InstanceAlreadyExistsException;
 import javax.management.InstanceNotFoundException;
-import javax.management.IntrospectionException;
-import javax.management.MBeanAttributeInfo;
 import javax.management.MBeanException;
-import javax.management.MBeanInfo;
-import javax.management.MBeanRegistrationException;
 import javax.management.MBeanServerConnection;
 import javax.management.MalformedObjectNameException;
-import javax.management.NotCompliantMBeanException;
 import javax.management.ObjectName;
 import javax.management.ReflectionException;
 import javax.management.openmbean.CompositeDataSupport;
@@ -36,8 +29,6 @@ import javax.management.remote.JMXConnector;
 import javax.management.remote.JMXConnectorFactory;
 import javax.management.remote.JMXServiceURL;
 
-import com.muyh.model.RuntimeInfo;  
-  
 public class JvmInfo{  
   
     static final long MB = 1024 * 1024;  
@@ -49,9 +40,8 @@ public class JvmInfo{
 
     JvmInfo(){
     	try {
-            serviceURL = new JMXServiceURL("service:jmx:rmi:///jndi/rmi://118.89.203.197:60001/jmxrmi"); 
-//    		serviceURL = new JMXServiceURL(null,"118.89.203.197",8080); 
-            conn = JMXConnectorFactory.connect(serviceURL);  
+            serviceURL = new JMXServiceURL("service:jmx:rmi:///jndi/rmi://118.89.203.197:39906/jmxrmi");
+            conn = JMXConnectorFactory.connect(serviceURL);
             mbs=conn.getMBeanServerConnection();  
             //获取远程memorymxbean  
             memBean=ManagementFactory.newPlatformMXBeanProxy  
@@ -283,25 +273,7 @@ public class JvmInfo{
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-       
-        	 
-    	
-    	
-//        try {
-//        	List<MemoryManagerMXBean> managers = (List<MemoryManagerMXBean>) ManagementFactory.newPlatformMXBeanProxy  
-//			(mbs,ManagementFactory.MEMORY_MANAGER_MXBEAN_DOMAIN_TYPE, MemoryManagerMXBean.class);
-//        	
-//        	if(managers != null && !managers.isEmpty()){  
-//                for(MemoryManagerMXBean manager : managers){  
-//                    System.out.println("vm内存管理器：名称="+manager.getName()+",管理的内存区="  
-//                +Arrays.deepToString(manager.getMemoryPoolNames())+",ObjectName="+manager.getObjectName());  
-//                }  
-//            }  
-//		} catch (IOException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}  
-        
+
     }  
       
     private void printGarbageCollectorInfo(){  
