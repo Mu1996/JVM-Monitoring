@@ -21,10 +21,16 @@ public class JvmCtrl {
 	JvmInfoService jvmInfoService;
 	
 	@RequestMapping(value = "/getTotalPage", method = RequestMethod.GET)
-    public String getTotalPage(ModelMap model) {
-		
-        return "totalPage";
-    }
+	public String getTotalPage(ModelMap model) {
+
+		return "totalInfo";
+	}
+
+	@RequestMapping(value = "/getTotalJson", method = RequestMethod.GET)
+	public String getTotalJson(ModelMap model) {
+
+		return "totalPage";
+	}
 	
 	@RequestMapping(value = "/getOSPage", method = RequestMethod.GET)
 	public String getOSPage(ModelMap model) {
