@@ -281,7 +281,7 @@
                     //tip:提示框对象、name:数据名称、value:数据值、text:当前文本、i:数据点的索引
                     parseText:function(tip,name,value,text,i){
                         return "<span style='color:#005268;font-size:11px;font-weight:600;'>"+name+
-                            "</span> <span style='color:#005268;font-size:20px;font-weight:600;'>"+value+"M</span>";
+                            "</span> <span style='color:#005268;font-size:20px;font-weight:600;'>"+value+"</span>";
                     }
                 }
             },
@@ -547,8 +547,6 @@
     window.setInterval(updateInfo, 5000);
 
 </script>
-
-
 <div id='osinfo'  style="float:left;width : auto;">
     //JVM系统内存Demo<br>
     <span id="os_name">name:</span>
@@ -564,8 +562,6 @@
     <span id="os_freeSwapSpaceSize">freeSwapSpaceSize:</span>
     <span id="os_committedVirtualMemorySize">committedVirtualMemorySize:</span>
 </div>
-
-
 <div id='heap'  style="float:left;width : auto;">
     //heap堆使用情况<br>
     <span id="heap_name">name:heap堆</span>
@@ -575,10 +571,6 @@
     <span id="heap_committed">committed:</span>
     <span id="heap_utilization">utilization:</span>
 </div>
-
-
-
-
 <div id='nonheap'  style="float:left;width : auto;">
     //non-heap非堆使用情况<br>
     <span id="non-heap-name">name:non-heap非堆</span>
@@ -588,7 +580,6 @@
     <span id="non-heap-committed">committed:</span>
     <span id="non-heap-utilization">utilization:</span>
 </div>
-
 <div id='thread'  style="float:left;width : auto;">
     <span></span>
     //JVM系统进程Demo<br>
@@ -597,8 +588,6 @@
     <span id="totalStartedThreadCount">线程总数（被创建并执行过的线程总数）:</span>
     <span id="daemonThreadCount">当时仍活动的守护线程（daemonThread）总数:</span>
 </div>
-
-
 <div id='classLoad'  style="float:left;width : auto;">
     //JVM类加载信息<br>
     <span id="totalLoadedClassCount">totalLoadedClassCount:</span>
